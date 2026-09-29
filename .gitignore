@@ -1,0 +1,4 @@
+source-pages/
+*.pdf
+preview/
+.chrome-test/
