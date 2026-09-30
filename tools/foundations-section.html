@@ -1,0 +1,73 @@
+<section class="chapter foundation-chapter" id="foundations">
+  <div class="kicker">00A · BEFORE SEMICONDUCTORS</div>
+  <h2>零基礎補課：電荷、離子、電場與等電位</h2>
+  <p class="source">本章是為自學補上的先備觀念，不是原講義的獨立章節。先讀完這裡，再進入第 01 章的 PN 接面與第 02 章的 MOS 電容。</p>
+  <div class="box">
+    <h3>這一章要學會什麼</h3>
+    <ol>
+      <li>分清電子、電洞、陽離子、陰離子，以及哪些粒子能移動。</li>
+      <li>由電壓判斷電場、正電荷、電子的方向；知道「方向」和「大小」是兩件事。</li>
+      <li>說出導體等電位的條件，並解釋 PN 空乏區與 MOS 表面各有哪些電荷。</li>
+    </ol>
+    <p><strong>先備檢查：</strong>只需知道「同號相斥、異號相吸」和長度單位：1 mm = 0.001 m。下文第一次用到的物理量都會先定義。</p>
+  </div>
+
+  <h3>0A.1　先認清四種角色：電子、電洞、陽離子、陰離子</h3>
+  <p><strong>一句白話：</strong>「帶負電」不等於「陰離子」；「帶正電」也不一定是陽離子。要先問它是單一電子、缺電子的有效載子，還是整個原子／分子帶電。</p>
+  <div class="table-wrap"><table><thead><tr><th>名稱</th><th>電性與由來</th><th>在本課常見的移動情況</th><th>容易混淆之處</th></tr></thead><tbody>
+    <tr><td>電子 e<sup>−</sup></td><td>基本粒子；電荷 −e，e 是基本電荷的正量值</td><td>金屬自由電子、半導體導帶電子可移動</td><td>電子本身不是「陰離子」</td></tr>
+    <tr><td>電洞 h<sup>+</sup></td><td>價帶少一個電子，用帶 +e 的有效載子描述</td><td>半導體中的電洞可移動</td><td>電洞不是帶正電的原子，也不是陽離子</td></tr>
+    <tr><td>陽離子</td><td>整個原子或分子淨帶正電；例如 Na 原子失去電子成 Na<sup>+</sup></td><td>在電解液中可能移動；矽晶格中的離化施體 D<sup>+</sup>通常固定</td><td>「帶正電」不代表一定會流向某處</td></tr>
+    <tr><td>陰離子</td><td>整個原子或分子淨帶負電；例如 Cl 原子得到電子成 Cl<sup>−</sup></td><td>在電解液中可能移動；矽晶格中的離化受體 A<sup>−</sup>通常固定</td><td>空乏區的 A<sup>−</sup>不是跑來聚集的自由離子</td></tr>
+  </tbody></table></div>
+  <p><strong>為什麼要分這麼細？</strong>在電解液，Na<sup>+</sup> 可往負電極、Cl<sup>−</sup> 可往正電極移動；它們會受擴散、電場與電極反應共同影響，不能無限制地「堆積」。在一般矽 PN 接面與 MOS 元件裡，摻雜原子占據晶格位置，離化後的 D<sup>+</sup>、A<sup>−</sup>仍固定在原處；主要移動的是電子與電洞。<a href="https://openstax.org/books/chemistry-atoms-first-2e/pages/16-7-electrolysis" target="_blank" rel="noopener noreferrer">電解液離子移動的對照</a></p>
+
+  <h3>0A.2　電場方向怎麼判？電壓與受力有什麼關係？</h3>
+  <p><strong>這一節要解決的問題：</strong>看到正負端、電子箭頭或 PN 圖時，能自己推導方向，不用死背。先定義：<i>q</i><sub>0</sub> 是很小的<strong>正</strong>試驗電荷（庫侖 C）；它受到的力 <i>F</i> 以牛頓 N 計，電場強度 <i>E</i> 的單位是 N/C，也可寫成 V/m。向量上的箭頭表示它有方向。</p>
+  <div class="eq math-display" data-tex="\vec E=\frac{\vec F}{q_0},\qquad q_0>0">E = F / q₀，試驗電荷取正</div>
+  <p>這是<strong>電場方向的定義</strong>：正試驗電荷受力往哪裡，電場就指向哪裡。換成實際電荷 <i>q</i>，受力是 <i>q</i> 倍的電場；電子的 <i>q</i>=−e，所以方向相反，電洞的 <i>q</i>=+e，所以方向相同。</p>
+  <div class="eq math-display" data-tex="\vec F=q\vec E">電荷所受的電力 F = qE</div>
+  <p><strong>電流箭頭又是哪個方向？</strong>電路圖的「約定電流」採用正電荷移動方向；在金屬導線中，電子的平均漂移方向與約定電流相反。在半導體中，電子與電洞都能對同一個約定電流作貢獻。不要把電場箭頭、電子箭頭與電流箭頭畫成同一支。</p>
+  <p>電位 <i>V</i> 的單位是伏特 V，表示每庫侖電荷的電位能。只看靜電場，<strong>電場由高電位指向低電位</strong>。若兩平板近似均勻電場，相距 <i>d</i>（公尺 m），電位差的量值為 |Δ<i>V</i>|，電場大小可用下式粗估；這個式子不適合直接套在形狀複雜或非均勻的接面。</p>
+  <p><strong>公式從哪裡來：</strong>令 Δ<i>x</i> 是沿 x 正方向的一段非零位移，<i>W</i> 是電場對正試驗電荷 <i>q</i> 做的功，Δ<i>U</i> 是電位能變化。在近似均勻的場中，<i>W</i>=<i>q E</i><sub>x</sub>Δ<i>x</i>；電場做正功時電位能減少，所以 Δ<i>U</i>=−<i>W</i>。依電位定義 Δ<i>V</i>=Δ<i>U</i>/<i>q</i>，先消去非零的 <i>q</i> 得 Δ<i>V</i>=−<i>E</i><sub>x</sub>Δ<i>x</i>，再除以非零的 Δ<i>x</i>，就是下面第一式。若場近似均勻且位移沿場線，取兩邊的量值並把距離寫成 <i>d</i>，得到第二式。</p>
+  <div class="eq math-display" data-tex="E_x\approx-\frac{\Delta V}{\Delta x}">Eₓ ≈ −ΔV/Δx</div>
+  <div class="eq math-display" data-tex="|E|\approx\frac{|\Delta V|}{d}">|E| ≈ |ΔV|/d，近似均勻電場</div>
+  <p>負號從「往高電位走時，電場指向反方向」而來。電場線描述<strong>正電荷受力方向</strong>，不是電子移動方向；真正的淨移動還可能受濃度差造成的擴散影響。</p>
+  <figure class="figure foundation-figure"><div class="foundation-scroll"><svg viewBox="0 0 720 240" role="img" aria-labelledby="f1t f1d"><title id="f1t">平板間電場與載子方向</title><desc id="f1d">左板五伏，右板零伏。電場與電洞受力向右，電子受力向左。</desc><defs><marker id="f-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#0b7890"/></marker><marker id="f-arrow-r" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#a14b57"/></marker></defs><rect x="65" y="37" width="45" height="155" rx="7" fill="#e9ab54"/><rect x="610" y="37" width="45" height="155" rx="7" fill="#7aa3bd"/><text x="42" y="225">左板 +5 V</text><text x="582" y="225">右板 0 V</text><path d="M155 80H565" stroke="#0b7890" stroke-width="6" marker-end="url(#f-arrow)"/><text x="300" y="65">電場 E：高電位 → 低電位</text><path d="M445 130H240" stroke="#a14b57" stroke-width="5" marker-end="url(#f-arrow-r)"/><text x="288" y="117">電子受力</text><path d="M240 170H445" stroke="#0b7890" stroke-width="5" marker-end="url(#f-arrow)"/><text x="306" y="205">電洞受力</text></svg></div><figcaption>自編示意：這是<strong>兩板之間</strong>的電場。電子受力朝 +5 V 板，電洞受力朝 0 V 板；每塊理想金屬板的內部則是等電位。手機可左右滑圖。</figcaption></figure>
+  <figure class="foundation-mobile"><div class="fm-electrodes"><div class="fm-plate hot">左板<br>+5 V</div><div class="fm-directions"><div>電場 E　<span>→</span></div><div>電子受力　<span>←</span></div><div>電洞受力　<span>→</span></div></div><div class="fm-plate cool">右板<br>0 V</div></div><figcaption>兩板之間：電場由高電位到低電位；電子受力逆電場，電洞順電場。每塊靜電平衡的金屬板內部近似等電位。</figcaption></figure>
+  <div class="practice"><strong>自編例題 1｜電場大小與方向</strong><br><strong>題目：</strong>左板 5 V、右板 0 V，板距 1 mm，忽略邊緣效應。求中間電場。<br><strong>辨識與步驟：</strong>近似平行板，先把 1 mm 換成 0.001 m；電位差量值是 5 V；5 ÷ 0.001 = <strong>5000 V/m</strong>。由高到低，所以電場<strong>向右</strong>。電子因電荷為負，電力<strong>向左</strong>；電洞向右。<br><strong>驗算：</strong>(5000 V/m)×(0.001 m)=5 V，單位和原電位差相符。若只問受力方向，不必知道粒子的質量。</div>
+
+  <h3>0A.3　「導體是等電位」何時成立？</h3>
+  <p><strong>一句白話：</strong>理想金屬導體在<strong>靜電平衡</strong>時，內部自由電子已重新分布到不再受淨電力的狀態，因此內部 <i>E</i>=0、各點電位相同；多出的淨電荷分布在表面。這不表示每個電子都在表面，也不表示附近的絕緣體或半導體也等電位。</p>
+  <p>令 A、B 是同一塊金屬內的任意兩點。靜電平衡時內部沒有電場，沿 A 到 B 移動的電位變化為零，所以兩點電位相等：</p>
+  <div class="eq math-display" data-tex="\vec E=\vec 0\quad\Longrightarrow\quad V_A=V_B">導體內部 E=0，所以同一導體的 A、B 兩點等電位</div>
+  <div class="grid2"><div class="box correct"><h4>可視為等電位</h4><p>同一塊靜電平衡的金屬；電路分析中電阻很小、壓降可忽略的短導線；MOS 的一個閘極導體本身（理想近似）。</p></div><div class="box warn"><h4>不能直接當等電位</h4><p>兩塊被氧化層隔開的導體；正在承受電壓的氧化層；有有限電阻且有電流的電阻／導線；<i>V</i><sub>DS</sub>≠0 時沿長度有電位變化的 MOS 通道。</p></div></div>
+  <p>若導線或電阻有電流 <i>I</i>（安培 A）且有電阻 <i>R</i>（歐姆 Ω），歐姆定律給出兩端壓降 <i>I R</i>（伏特 V）；因此「整段永遠同電位」只是把壓降忽略時的電路近似。對 MOS 而言，閘極導體近似等電位，<strong>但閘極與半導體表面之間有氧化層電場與電壓降</strong>；若汲源間加電壓，通道也不是等電位。<a href="https://openstax.org/books/university-physics-volume-2/pages/6-4-conductors-in-electrostatic-equilibrium" target="_blank" rel="noopener noreferrer">導體靜電平衡的依據</a></p>
+
+  <h3>0A.4　PN 接面：正、負離子「在哪一側」？</h3>
+  <p><strong>先備接續：</strong>五價施體（例如磷）捐出可移動電子後，原摻雜位置成<strong>固定 D<sup>+</sup></strong>；三價受體（例如硼）接受電子後，原位置成<strong>固定 A<sup>−</sup></strong>。若沒有形成接面，材料大部分區域仍近乎電中性：n 型的 D<sup>+</sup>由電子平衡，p 型的 A<sup>−</sup>由電洞平衡。</p>
+  <p>當 p、n 接合，接面附近的電子與電洞因<strong>濃度差</strong>互相擴散並復合；能移動的載子變少，就<strong>露出原本已在晶格位置的離子</strong>。若圖中 p 在左、n 在右：左側 p 空乏區是 A<sup>−</sup>，右側 n 空乏區是 D<sup>+</sup>。內建電場從正的 n 側指向負的 p 側，也就是<strong>由右往左</strong>。離子並沒有先游過接面再聚集。</p>
+  <figure class="figure foundation-figure"><div class="foundation-scroll"><svg viewBox="0 0 720 265" role="img" aria-labelledby="f2t f2d"><title id="f2t">PN 接面空乏區的固定離子</title><desc id="f2d">p 側在左，空乏區留下固定受體負離子；n 側在右，留下固定施體正離子；內建電場從 n 指向 p。</desc><defs><marker id="f2-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#0b7890"/></marker></defs><rect x="45" y="50" width="290" height="128" rx="8" fill="#ffe0e0"/><rect x="335" y="50" width="340" height="128" rx="8" fill="#d9eefa"/><rect x="260" y="50" width="150" height="128" fill="#f7f1dc" opacity=".9"/><path d="M335 45V182" stroke="#294e62" stroke-dasharray="5 5" stroke-width="2"/><text x="95" y="82">p 型：電洞為多數</text><text x="465" y="82">n 型：電子為多數</text><text x="269" y="117" fill="#a24c5d">A−　A−　A−</text><text x="340" y="150" fill="#0a7196">D+　D+　D+</text><path d="M435 213H262" stroke="#0b7890" stroke-width="6" marker-end="url(#f2-arrow)"/><text x="244" y="247">內建電場：n 側 D+ → p 側 A−</text><text x="48" y="206" fill="#9c5361">受體固定不動</text><text x="523" y="206" fill="#176a8a">施體固定不動</text></svg></div><figcaption>自編剖面圖：顏色只標示概念區域，離子符號指晶格固定電荷；電場箭頭是<strong>電力方向</strong>，熱平衡時漂移與擴散互相抵消，沒有持續的淨電流。</figcaption></figure>
+  <figure class="foundation-mobile"><div class="fm-pn"><div class="fm-side p"><strong>p 側（左）</strong><span>固定受體 A<sup>−</sup></span><small>多數載子：電洞</small></div><div class="fm-side n"><strong>n 側（右）</strong><span>固定施體 D<sup>+</sup></span><small>多數載子：電子</small></div></div><div class="fm-field">內建電場　←　從 D<sup>+</sup> 指向 A<sup>−</sup></div><figcaption>空乏區是電子與電洞變少後，原地固定離子顯露；熱平衡時沒有持續淨電流。</figcaption></figure>
+  <div class="practice"><strong>自編例題 2｜不用背圖判斷 PN 正負側</strong><br><strong>題目：</strong>p 在左、n 在右，問空乏區固定電荷與電場方向。<br><strong>逐步判斷：</strong>① p 側摻受體 → 離化受體 A<sup>−</sup>留在左；② n 側摻施體 → 離化施體 D<sup>+</sup>留在右；③ 電場從正到負 → <strong>右往左</strong>。<br><strong>驗算：</strong>左側電洞受電場力向左、右側電子受力向右，與它們因濃度差朝接面擴散的趨勢相反，符合熱平衡。<a href="https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/833afa926e598523708318bdf7d6a4ed_MIT3_024S13_2012lec18.pdf" target="_blank" rel="noopener noreferrer">MIT PN 接面課程對照</a></div>
+
+  <h3>0A.5　MOS：正閘壓時到底誰靠近氧化層？</h3>
+  <p>以下限定<strong>p 型本體的 nMOS</strong>，閘極相對本體提高電位。閘極是一塊導體，靠氧化層的表面可出現<strong>正的淨表面電荷</strong>；這通常不是陽離子搬到閘極。氧化層是絕緣體，正常操作下幾乎不讓直流載子穿越，但電場可以穿過它。</p>
+  <ol class="steps"><li><strong>負閘壓：累積。</strong>正的電洞被吸到 p 型矽表面，氧化層下方電洞較多。</li><li><strong>小正閘壓：空乏。</strong>電洞被推離表面，原地的固定 A<sup>−</sup>露出；空乏層加寬。不是陰離子從本體跑到表面。</li><li><strong>正壓再提高：強反轉。</strong>表面吸引足夠的<strong>可移動電子</strong>，在氧化層下方形成 n 型反轉層；固定 A<sup>−</sup>仍在較下方的空乏區。源／汲的 n<sup>+</sup>區可提供電子。</li></ol>
+  <figure class="figure foundation-figure"><div class="foundation-scroll"><svg viewBox="0 0 720 310" role="img" aria-labelledby="f3t f3d"><title id="f3t">正閘壓下 p 型 MOS 的電荷分布</title><desc id="f3d">閘極底面有正淨電荷，氧化層下方電子反轉層，再下方是固定受體負離子的空乏區與電洞所在的 p 型本體。</desc><rect x="90" y="28" width="540" height="56" rx="7" fill="#246a85"/><rect x="90" y="85" width="540" height="30" rx="5" fill="#f8e6a9"/><rect x="90" y="116" width="540" height="32" fill="#a7e8ed"/><rect x="90" y="148" width="540" height="69" fill="#f6d7cf"/><rect x="90" y="217" width="540" height="61" rx="6" fill="#ffeae2"/><text x="265" y="56" fill="white">閘極導體：近似等電位</text><text x="292" y="78" fill="white">+　+　+　+　+</text><text x="305" y="107">氧化層：有電場</text><text x="255" y="138">e−　e−　e−　反轉層</text><text x="227" y="184">A−　 A−　 A−　固定空乏電荷</text><text x="274" y="252">h+　h+　p 型本體</text><text x="97" y="299">由上而下：閘極 → 氧化層 → 電子 → 固定離子 → 本體</text></svg></div><figcaption>自編層次圖：為辨認各種電荷而畫，尺寸、實際電場和載子濃度不按比例。<a href="#mos-lab">接著操作 MOS 原理實驗室</a>，調整 VGS、VDS、VSB。</figcaption></figure>
+  <figure class="foundation-mobile fm-stack"><div class="fm-layer gate">閘極導體：近似等電位<br>底面正淨電荷 + + +</div><div class="fm-layer oxide">氧化層：有電場，幾乎無直流穿越</div><div class="fm-layer electrons">e<sup>−</sup> e<sup>−</sup> e<sup>−</sup>：電子反轉層</div><div class="fm-layer ions">A<sup>−</sup> A<sup>−</sup>：固定空乏電荷</div><div class="fm-layer body">h<sup>+</sup> h<sup>+</sup>：p 型本體</div><figcaption>正閘壓、p 型本體的示意順序；固定 A<sup>−</sup>不會變成通道電子。尺寸不按比例。</figcaption></figure>
+  <p><strong>特別注意端點：</strong>電容表面主要受閘極與本體的電位差 <i>V</i><sub>GB</sub>=<i>V</i><sub>G</sub>−<i>V</i><sub>B</sub>影響；MOSFET 能否形成連接源汲的強反轉通道，還要看 <i>V</i><sub>GS</sub>與體偏壓決定的臨界電壓 <i>V</i><sub>T</sub>。若本體和源極電位不同，<i>V</i><sub>GB</sub>與<i>V</i><sub>GS</sub>不可混用。<a href="https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/2a94c4436b68993a04ad47bda22eb067_MIT6_012F09_lec10.pdf" target="_blank" rel="noopener noreferrer">MIT MOS 電容講義對照</a></p>
+
+  <div class="practice"><strong>自編例題 3｜正閘壓下誰在氧化層旁？</strong><br><strong>題目：</strong>已知 p 型本體的 nMOS 達到強反轉，閘極相對本體為正。由上往下列出主要電荷。<br><strong>判斷：</strong>閘極導體的氧化層側有正淨表面電荷；氧化層下的矽表面是<strong>可移動電子</strong>；再往下的空乏區是<strong>固定 A<sup>−</sup></strong>；較深處 p 型本體仍以電洞為多數載子。<br><strong>驗算：</strong>正閘壓會排開正電洞、吸引負電子；A<sup>−</sup>原本就固定在晶格，不能把它當成移動的反轉層。若題目只說「閘極為正」卻沒說已超過臨界電壓，則不能直接斷言已有強反轉。</div>
+
+  <h3>0A.6　遇到一張新圖，四步判斷誰在哪裡</h3>
+  <div class="table-wrap"><table><thead><tr><th>步驟</th><th>要做什麼</th><th>為什麼</th><th>如何當場檢查</th></tr></thead><tbody>
+    <tr><td>1</td><td>先標材料：金屬、氧化層、p／n 矽或電解液</td><td>不同材料的可動粒子不同</td><td>氧化層不畫成電洞通道；矽摻雜離子不畫成會游動</td></tr>
+    <tr><td>2</td><td>標電位與正負電荷</td><td>先定電場，再談受力</td><td>電場由高電位到低電位；靜電平衡的同一導體內部 E=0</td></tr>
+    <tr><td>3</td><td>分開「固定」與「可移動」</td><td>空乏是移動載子變少，固定離子顯露</td><td>PN：p 側 A<sup>−</sup>、n 側 D<sup>+</sup>；p 型 MOS 正閘壓：A<sup>−</sup>不移動</td></tr>
+    <tr><td>4</td><td>分別畫電場、電子、電洞的箭頭</td><td>電子與正電荷受力相反；擴散可能另有方向</td><td>只看靜電力：電子逆 E，電洞順 E；熱平衡時淨電流為零</td></tr>
+  </tbody></table></div>
+  <div class="box warn"><h3>常見錯誤，當場修正</h3><ul><li>「空乏區聚集了從別處跑來的陰、陽離子」→ 錯。它們是<strong>原地固定的離化摻雜原子</strong>，因電子／電洞離開而顯露。</li><li>「電子沿電場線跑」→ 若只看電力，電子方向<strong>反</strong>電場；電場線按正試驗電荷定義。</li><li>「導體一定全都同電位」→ 只在<strong>靜電平衡或忽略導線壓降</strong>的近似下使用；有電流且有電阻時可能有壓降。</li><li>「正閘壓吸引陰離子形成通道」→ nMOS 的反轉通道由<strong>可移動電子</strong>形成，不是固定 A<sup>−</sup>變成可移動陰離子。</li></ul></div>
+  <div class="practice"><strong>30 秒回想（自編練習，答案可直接核對）</strong><br>① p 側空乏區是 A<sup>−</sup>還是 D<sup>+</sup>？<strong>A<sup>−</sup>，固定。</strong><br>② 電場向右，電子只受電力時往哪邊？<strong>左邊。</strong><br>③ 正閘壓、p 型本體，靠近氧化層的強反轉載子是什麼？<strong>電子。</strong><br>④ 閘極金屬近似等電位，能推出氧化層 E=0 嗎？<strong>不能；兩者是不同材料與區域。</strong></div>
+  <p class="small">物理概念交叉核對：<a href="https://openstax.org/books/university-physics-volume-2/pages/7-4-determining-field-from-potential" target="_blank" rel="noopener noreferrer">OpenStax 電位與電場</a>、<a href="https://openstax.org/books/university-physics-volume-2/pages/7-5-equipotential-surfaces-and-conductors" target="_blank" rel="noopener noreferrer">等電位</a>、MIT OpenCourseWare 的 <a href="https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/833afa926e598523708318bdf7d6a4ed_MIT3_024S13_2012lec18.pdf" target="_blank" rel="noopener noreferrer">PN 接面</a>與 <a href="https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/2a94c4436b68993a04ad47bda22eb067_MIT6_012F09_lec10.pdf" target="_blank" rel="noopener noreferrer">MOS 電容</a>。以上為重新撰寫的自學說明與示意圖。</p>
+</section>

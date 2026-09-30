@@ -1,4 +1,4 @@
-const CACHE = 'electronic-circuits-notes-v3';
+const CACHE = 'electronic-circuits-notes-v4';
 const ASSETS = [
   './', './index.html', './style.css', './enhancements.css', './app.js',
   './mos-model.js', './mos-lab.js', './manifest.webmanifest',

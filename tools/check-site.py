@@ -57,8 +57,8 @@ for name in re.findall(r"'([A-Za-z0-9-]+)'", worker.split("const FONT_NAMES = ["
     if not path.is_file():
         errors.append(f"Missing KaTeX font: {path.name}")
 
-if page.equations != 23:
-    errors.append(f"Expected 23 KaTeX expressions, found {page.equations}")
+if page.equations != 28:
+    errors.append(f"Expected 28 KaTeX expressions, found {page.equations}")
 if errors:
     raise SystemExit("\n".join(errors))
 print(f"PASS site assets and links: {len(page.ids)} IDs, {page.equations} equations")
