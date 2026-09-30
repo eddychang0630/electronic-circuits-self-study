@@ -2,7 +2,7 @@
 
 線上閱讀：<https://eddychang0630.github.io/electronic-circuits-self-study/>
 
-根據使用者提供的 21 頁影像型《電子電路分析講義.pdf》（投影片 1–82）整理的繁體中文自學網站。包含摘要、目錄、原創示意圖、公式推導、解題流程、自編例題與講義頁碼對照。
+根據使用者提供的 21 頁影像型《電子電路分析講義.pdf》（投影片 1–82）整理的繁體中文自學網站。包含摘要、目錄、原創剖面示意、標準電路符號、KaTeX 公式、可調 VGS／VDS／VSB 的 MOS 互動動畫、公式推導、解題流程、自編例題與講義頁碼對照。
 
 ## 閱讀與安裝
 
@@ -16,4 +16,10 @@
 
 ## 來源與範圍
 
-原始掃描 PDF 與 `source-pages/` 僅供本機核對，不屬於網站發布內容。所有網站圖均為原創 SVG 概念圖。公式是長通道第一階模型，適用條件在筆記正文中列出；實際晶片設計需使用製程模型。
+原始掃描 PDF 與 `source-pages/` 僅供本機核對，不屬於網站發布內容。剖面與載子圖為教學示意；電路圖由開源標準符號產生。公式是長通道第一階模型，適用條件在筆記正文中列出；實際晶片設計需使用製程模型。
+
+## 開源元件
+
+- [KaTeX](https://katex.org/) 0.18.9（MIT）：網站自帶排版程式與字型，授權見 `vendor/katex/LICENSE.txt`。
+- [Schemdraw](https://schemdraw.readthedocs.io/) 0.23（MIT）：在建置時產生 `assets/diagrams/` 的標準符號向量圖；授權見 `assets/LICENSE-schemdraw.txt`。可用 `pip install -r tools/requirements.txt` 和 `python tools/generate_diagrams.py` 重新產生。
+- 互動剖面屬於定性教學動畫。參數已在頁面列出，不代表特定晶片或粒子的實際尺寸與速度。

@@ -1,0 +1,46 @@
+/* Clear math and source-backed circuits */
+.chapter i{font-family:KaTeX_Math,"Cambria Math",Georgia,serif}
+.chapter sub,.chapter sup{font-family:KaTeX_Main,"Cambria Math",serif;font-size:.73em}
+.eq{font-family:inherit;font-size:clamp(1.03rem,2vw,1.25rem);white-space:normal;line-height:1.5;background:#f6fafb;border-color:#cee2e8;padding:18px 14px;overscroll-behavior-x:contain}
+.eq .katex-display{margin:.12em 0}
+.eq .katex-display>.katex{white-space:nowrap}
+.math-inline{font-size:1.13rem}
+.figure{background:#fff;border-color:#cadce4;box-shadow:0 6px 22px rgba(21,61,80,.06)}
+.schematic img{display:block;width:min(100%,600px);max-height:340px;object-fit:contain;margin:auto}
+.schematic figcaption{border-top:1px solid #e7eff2;margin:5px 10px 0;padding-top:11px}
+
+/* Interactive MOS cross-section */
+.lab-chapter{border-top:6px solid #0e8d99}
+.lab-key{display:flex;flex-wrap:wrap;gap:8px 17px;margin:18px 0;color:#34525d;font-size:.9rem}
+.lab-key span{display:inline-flex;align-items:center;gap:6px}
+.swatch{display:inline-block;width:13px;height:13px;border-radius:50%;border:2px solid rgba(0,0,0,.14)}
+.swatch.electron{background:#039cb9}.swatch.hole{background:#db6f71}.swatch.ion{background:#b25d42}.swatch.channel{background:#0e9ab0;border-radius:3px}
+.lab-layout{display:grid;grid-template-columns:minmax(235px,290px) minmax(0,1fr);gap:18px;align-items:start}
+.lab-controls,.lab-stage{border:1px solid #cddfe6;border-radius:14px;background:#fff;min-width:0}
+.lab-controls{padding:19px}.lab-controls h3{margin:0 0 18px;color:#144d5a}
+.lab-control{padding:0 0 15px;margin-bottom:15px;border-bottom:1px solid #e4edef}
+.lab-control label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.92rem;font-weight:650}
+.lab-control output{white-space:nowrap;color:#087680;font-variant-numeric:tabular-nums;font-weight:800}
+.lab-control input[type=range]{width:100%;margin:12px 0 2px;accent-color:#078b99;height:24px;cursor:pointer}
+.lab-control p{font-size:.85rem;color:#516976;margin:0;line-height:1.5}
+.lab-presets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:5px 0 15px}
+.lab-presets button,.lab-actions button{background:#e9f5f7;border:1px solid #a6d2d8;border-radius:8px;color:#0a5963;padding:8px 5px;font-size:.86rem;font-weight:700;line-height:1.3}
+.lab-presets button:hover,.lab-actions button:hover{background:#d4edf0}
+.lab-presets button:focus-visible,.lab-actions button:focus-visible,.lab-control input:focus-visible{outline:3px solid #f5b64d;outline-offset:2px}
+.lab-actions{display:flex;gap:7px}.lab-actions button:first-child{flex:1;background:#0d7883;color:#fff;border-color:#0d7883}.lab-actions button:last-child{padding-inline:13px}
+.lab-stage{overflow:hidden}.lab-stage-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:5px 12px;padding:13px 17px;background:#e9f6f8;border-bottom:1px solid #cddfe6;color:#135662}.lab-stage-head strong{font-size:1.05rem}.lab-stage-head span{font-size:.9rem}
+.lab-svg-wrap{overflow-x:auto;background:linear-gradient(#f9fcfd,#fff)}#mos-svg{display:block;width:100%;height:auto}.lab-svg-wrap.zoomed #mos-svg{min-width:700px}
+.lab-zoom{display:none;margin:8px 11px 0;padding:6px 10px;border:1px solid #aad2d9;border-radius:7px;background:#ecf7f8;color:#0a5f68;font-size:.82rem;font-weight:750}
+#mos-svg .lab-svg-label{font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-size:15px;font-weight:750;fill:#144153}#mos-svg .lab-svg-label.light{fill:#fff}#mos-svg .lab-svg-label.dark{fill:#254454}#mos-svg .lab-svg-label.pinch{fill:#9a4c35}
+#mos-svg .ion-dot{fill:#aa6250;stroke:#f8e0d2;stroke-width:1.5}#mos-svg .hole-dot{fill:#e8797d;stroke:#fff;stroke-width:1.3}#mos-svg .electron-dot{fill:#007eac;stroke:#fff;stroke-width:1.2}#mos-svg .flow-dot{fill:#003c77;stroke:#fff;stroke-width:1.4}
+#mos-svg .gate-charge{font:bold 21px Arial,sans-serif;fill:#fff;text-anchor:middle}#mos-svg circle{transition:cy .25s,opacity .25s}#lab-channel,#lab-depletion{transition:opacity .25s,height .25s}
+.lab-swipe{display:none;padding:0 15px;margin:1px 0 7px}.lab-readouts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #e3eef1}
+.lab-readouts>div{padding:10px 8px;text-align:center;border-right:1px solid #e3eef1}.lab-readouts>div:last-child{border-right:0}.lab-readouts span{display:block;font-size:.78rem;color:#536c79;line-height:1.35}.lab-readouts strong{display:block;font-size:.98rem;font-variant-numeric:tabular-nums;color:#0b5862}
+.lab-formulas{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.lab-formulas>div{border:1px solid #d5e6e9;background:#f5fafb;border-radius:8px;padding:8px 14px}
+.lab-explanation{border-left:5px solid #0c8794;background:#eef8f9;border-radius:10px;padding:15px 17px;margin:16px 0;font-weight:650;line-height:1.7}
+.lab-notes{display:grid;grid-template-columns:1fr 1fr;gap:16px}.lab-notes>div{border:1px solid #dce8ed;border-radius:10px;padding:13px 16px}.lab-notes h3{margin:0 0 7px;font-size:1.02rem}.lab-notes p{margin:0;font-size:.94rem}
+@media(max-width:1100px){.lab-layout{grid-template-columns:1fr}.lab-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 13px}.lab-controls h3{grid-column:1/-1;margin:0}.lab-control{margin:0;padding-bottom:5px}.lab-presets{grid-column:1/-1;grid-template-columns:repeat(5,minmax(0,1fr));margin:0}.lab-actions{grid-column:1/-1}}
+@media(max-width:700px){.lab-controls{display:block}.lab-control{margin-bottom:14px}.lab-presets{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-notes{grid-template-columns:1fr}.lab-readouts{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-readouts>div:nth-child(2){border-right:0}.lab-readouts>div:nth-child(-n+2){border-bottom:1px solid #e3eef1}.lab-swipe,.lab-zoom{display:block}#mos-svg .lab-svg-label{font-size:20px}}
+@media(max-width:540px){.eq{padding:13px 9px;font-size:1.02rem}.schematic img{max-height:250px}.lab-chapter{padding:19px 12px}.lab-stage-head{padding:11px}.lab-formulas{display:block}.lab-formulas>div{margin-bottom:8px;overflow-x:auto}.lab-key{font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){#mos-svg circle,#lab-channel,#lab-depletion{transition:none}}
+@media print{.lab-controls,.lab-swipe{display:none}.lab-layout{display:block}.lab-stage{border:1px solid #bbb}.lab-stage-head{color:#000;background:#fff}}
