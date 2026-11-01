@@ -1,36 +1,31 @@
-# 電子電路分析自學筆記
+# 電子電路分析｜橫式 A4 大字完整筆記
 
-線上閱讀：<https://eddychang0630.github.io/electronic-circuits-self-study/>
+[開啟完整教材](https://eddychang0630.github.io/electronic-circuits-self-study/)
 
-課堂公式與圖解（A4 橫式，含每次上課目錄，共 61 頁）：
+網站首頁對應使用者指定的 `電子電路分析_橫式A4大字完整筆記.html` 完整總講義，包含全部 7 章、2026/09/09–2026/10/28 的課程內容、公式推導、作業與隨堂小考。本次發布驗證共有 911 個公式及 18 個教學 SVG。
 
-- [線上開啟 HTML](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/)
-- [下載列印 PDF](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/electronic-circuits-A4-landscape.pdf)
-- [修正後入門頁：Body 接法、Q 點與小訊號切線](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/fundamentals.html)
-- [補充圖：Q 點的正確切線與轉導](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/gm-tangent-corrected.svg)
+## 本次修正
 
-此版本依 2026/09/09–2026/10/28 的上課日期整理板書公式、推導與圖，合併重複內容，另收錄講義公式及電路圖。HTML 已內嵌圖片、公式排版程式與字型，可下載後離線使用。KaTeX 0.16.22 授權見 `formula-print/LICENSE-KaTeX.txt`。
+- 入門圖 0-1 的 Q 點落在電流曲線上，紅色切線通過 Q，斜率由同一平方律模型計算。
+- 補正源極接地的適用範圍，以及 nMOS 的 P 型 Body 與源／汲極 PN 接面偏壓說明。
+- 明確區分飽和區條件、小訊號近似、總電流與電流變動量。
 
-根據使用者提供的 21 頁影像型《電子電路分析講義.pdf》（投影片 1–82）整理的繁體中文自學網站。包含摘要、目錄、電荷／離子／電場／等電位先備課、原創剖面示意、標準電路符號、KaTeX 公式、可調 VGS／VDS／VSB 的 MOS 互動動畫、公式推導、解題流程、自編例題與講義頁碼對照。
+## 閱讀與列印
 
-## 閱讀與安裝
+- 首頁可閱讀完整 7 章，亦可使用工具列篩選章節、調整字體或切換單／雙欄。
+- 按「列印」後選 A4、橫向，關閉瀏覽器頁首與頁尾。
+- HTML 已內嵌 KaTeX 0.16.22、CSS、JavaScript、字型與 SVG，下載 `index.html` 後可離線使用。
 
-- 直接打開 `index.html` 即可閱讀全部內容。
-- 網站發布到 HTTPS（例如 GitHub Pages）後，可在 iPhone／iPad Safari 用「分享 → 加入主畫面」，或在 Android Chrome 用「安裝應用程式／加入主畫面」。首次連網開啟後，Service Worker 會快取網站內容供離線閱讀。
-- 本機測試 PWA 可在目錄中執行 `python -m http.server 8000`，再開啟 `http://localhost:8000/`。
+## 內容維護與發布
 
-## GitHub Pages
+內容由本機 `landscape_src/*.html` 維護，執行 `build_landscape_notes.py` 產生同名完整筆記與分章檔；發布時使用完整總講義內嵌公式資源，正文及 7 章工具列保持相同。
 
-本專案是純靜態檔，所有資源均用相對路徑，可直接將 `main` 分支根目錄設為 Pages 發布來源。GitHub 儲存庫的 **Settings → Pages → Build and deployment → Deploy from a branch → main / (root) → Save**。稍後可在 Pages 設定頁看到公開網址。
+GitHub Pages 以 `main` 分支根目錄發布，網站首頁為 `index.html`。
 
-## 來源與範圍
+## 其他教材
 
-原始掃描 PDF 與 `source-pages/` 僅供本機核對，不屬於網站發布內容。剖面與載子圖為教學示意；電路圖由開源標準符號產生。公式是長通道第一階模型，適用條件在筆記正文中列出；實際晶片設計需使用製程模型。
+- [按日期整理的公式與圖解（A4 橫式，61 頁）](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/)
+- [按日期公式版的列印 PDF](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/electronic-circuits-A4-landscape.pdf)
+- [Q 點切線與轉導獨立圖](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/gm-tangent-corrected.svg)
 
-第 00A 章是為零基礎自學新增的先備課，來源文字維護於 `tools/foundations-section.html`，執行 `python tools/build-foundations.py` 可重新整合進 `index.html`。內容區分電解液中的可移動離子與矽晶格中固定的離化摻雜原子，並標出適用的電場與導體近似條件。
-
-## 開源元件
-
-- [KaTeX](https://katex.org/) 0.18.9（MIT）：網站自帶排版程式與字型，授權見 `vendor/katex/LICENSE.txt`。
-- [Schemdraw](https://schemdraw.readthedocs.io/) 0.23（MIT）：在建置時產生 `assets/diagrams/` 的標準符號向量圖；授權見 `assets/LICENSE-schemdraw.txt`。可用 `pip install -r tools/requirements.txt` 和 `python tools/generate_diagrams.py` 重新產生。
-- 互動剖面屬於定性教學動畫。參數已在頁面列出，不代表特定晶片或粒子的實際尺寸與速度。
+KaTeX 0.16.22（MIT）授權見 `LICENSE-KaTeX.txt`。原始掃描講義與課堂照片不包含在本次完整總講義發布內容中。
