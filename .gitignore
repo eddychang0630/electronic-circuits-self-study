@@ -1,5 +1,6 @@
 source-pages/
 *.pdf
 !formula-print/electronic-circuits-A4-landscape.pdf
+!claude-code/*.pdf
 preview/
 .chrome-test/
