@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="gm-title gm-desc" font-family="Arial, Microsoft JhengHei, sans-serif">
+  <title id="gm-title">直流工作點 Q、正確切線與轉導</title>
+  <desc id="gm-desc">固定汲源電壓3V、本體對源極電壓0V；門檻為1V，忽略通道調變。示範電流為(1mA/V²)乘以(VGS−1V)²。Q位於2V、1mA。紅色虛線通過Q且斜率為2mA/V。綠色三角形表示沿切線的小變動近似。</desc>
+  <defs><marker id="gm-axis-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#263747" stroke-width="1.5"/></marker></defs>
+  <rect x="1" y="1" width="798" height="598" rx="12" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+  <g fill="#172b3a" font-size="23">
+    <text x="400" y="36" text-anchor="middle" font-size="27" font-weight="bold">Q 點的切線與轉導</text>
+    <text x="400" y="68" text-anchor="middle" font-size="18">固定 VDS = 3 V、VBS = 0 V；VTH = 1 V、λ = 0</text>
+    <path d="M100 95V430H744" fill="none" stroke="#263747" stroke-width="2.5" marker-start="url(#gm-axis-arrow)" marker-end="url(#gm-axis-arrow)"/>
+    <text x="92" y="98" text-anchor="end"><tspan font-style="italic">I</tspan><tspan baseline-shift="sub" font-size="0.7em">D</tspan></text>
+    <text x="92" y="139" text-anchor="end" font-size="18">(mA)</text>
+    <text x="743" y="462" text-anchor="end"><tspan font-style="italic">V</tspan><tspan baseline-shift="sub" font-size="0.7em">GS</tspan> (V)</text>
+    <text x="90" y="457" text-anchor="end" font-size="19">0</text>
+    <path d="M94 350H106M300 424V436M500 424V436" stroke="#263747" stroke-width="2"/>
+    <text x="86" y="357" text-anchor="end" font-size="20">1</text>
+    <text x="300" y="464" text-anchor="middle" font-size="21"><tspan font-style="italic">V</tspan><tspan baseline-shift="sub" font-size="0.7em">TH</tspan> = 1 V</text>
+    <text x="500" y="464" text-anchor="middle" font-size="21"><tspan font-style="italic">V</tspan><tspan baseline-shift="sub" font-size="0.7em">GSQ</tspan> = 2 V</text>
+    <path d="M100 350H500V430" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="6 5"/>
+    <!-- Exact map: x=100+200*(VGS/1V), y=430-80*(ID/1mA). ID=(1mA/V^2)*(VGS-1V)^2; VDS=3V,VBS=0V,VTH=1V,lambda=0. -->
+    <path id="gm-curve" d="M100 430H300Q500 430 700 110" fill="none" stroke="#1d4ed8" stroke-width="4"/>
+    <!-- Tangent ID=1mA+(2mA/V)*(VGS-2V); screen slope=-0.8. -->
+    <line id="gm-tangent" x1="400" y1="430" x2="640" y2="238" stroke="#be123c" stroke-width="3" stroke-dasharray="9 6"/>
+    <path d="M500 350H550V310" fill="none" stroke="#047857" stroke-width="2.5"/>
+    <path d="M542 350V342H550" fill="none" stroke="#047857" stroke-width="1.5"/>
+    <text x="525" y="383" text-anchor="middle" font-size="20" fill="#047857">Δ<tspan font-style="italic">V</tspan><tspan baseline-shift="sub" font-size="0.7em">GS</tspan></text>
+    <text x="564" y="342" font-size="19" fill="#047857">Δ<tspan font-style="italic">I</tspan><tspan baseline-shift="sub" font-size="0.7em">D</tspan>（近似）</text>
+    <circle id="gm-q" cx="500" cy="350" r="6" fill="#be123c" stroke="white" stroke-width="2"/>
+    <path d="M443 278L491 340" fill="none" stroke="#be123c" stroke-width="1.8"/>
+    <text x="288" y="260" fill="#be123c" font-weight="bold">Q (2 V, 1 mA)</text>
+    <text x="145" y="151" font-size="21" fill="#1d4ed8">藍線：<tspan font-style="italic">I</tspan><tspan baseline-shift="sub" font-size="0.7em">D</tspan> = (1 mA/V<tspan baseline-shift="super" font-size="0.7em">2</tspan>)(<tspan font-style="italic">V</tspan><tspan baseline-shift="sub" font-size="0.7em">GS</tspan> − 1 V)<tspan baseline-shift="super" font-size="0.7em">2</tspan></text>
+    <text x="145" y="184" font-size="21" fill="#be123c">紅虛線：Q 點的切線</text>
+    <text x="400" y="516" text-anchor="middle" font-size="25"><tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="0.7em">m</tspan> = (d<tspan font-style="italic">I</tspan><tspan baseline-shift="sub" font-size="0.7em">D</tspan> / d<tspan font-style="italic">V</tspan><tspan baseline-shift="sub" font-size="0.7em">GS</tspan>)<tspan baseline-shift="sub" font-size="0.7em">Q</tspan> = 2 mA/V</text>
+    <text x="400" y="553" text-anchor="middle" font-size="25">小變動：Δ<tspan font-style="italic">I</tspan><tspan baseline-shift="sub" font-size="0.7em">D</tspan> ≈ <tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="0.7em">m</tspan> Δ<tspan font-style="italic">V</tspan><tspan baseline-shift="sub" font-size="0.7em">GS</tspan></text>
+    <text x="400" y="590" text-anchor="middle" font-size="21" fill="#475569">切線只近似 Q 附近；綠色三角形取在紅切線上。</text>
+  </g>
+</svg>
