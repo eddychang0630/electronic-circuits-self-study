@@ -65,7 +65,9 @@ svg .cv{fill:none;stroke-width:2.4} svg .cv.c0{stroke:var(--blue)} svg .cv.c1{st
 svg .cv.dash{stroke:#888;stroke-dasharray:5 4;stroke-width:1.5}
 .merr{color:red}
 @media print{ body{background:#fff} .bar{display:none} .page{margin:0;box-shadow:none;break-after:page} .page:last-child{break-after:auto} }
-@media screen and (max-width:1150px){ .page{zoom:.6} }
+@media screen{ .page{zoom:var(--z,1)} }
+@media print{ .page{zoom:1 !important} }
+@media screen and (max-width:700px){ .bar span{display:none} }
 </style>
 </head>
 <body>
@@ -655,6 +657,6 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">â
 </div>
 </div></div>
 
-<script></script>
+<script>(function(){function fit(){var w=document.documentElement.clientWidth;var pw=297*96/25.4+24;var z=Math.min(1,(w-8)/pw);document.documentElement.style.setProperty('--z',z.toFixed(4));}fit();addEventListener('resize',fit);addEventListener('orientationchange',fit);addEventListener('beforeprint',function(){document.documentElement.style.setProperty('--z','1')});addEventListener('afterprint',fit);})();</script>
 </body>
 </html>

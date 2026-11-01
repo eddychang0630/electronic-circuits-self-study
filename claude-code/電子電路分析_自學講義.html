@@ -101,7 +101,7 @@ details.derive>summary{color:var(--blue)}
 details.check{border-color:var(--acc)}
 details.check>summary{color:var(--acc)}
 
-.step{display:grid;grid-template-columns:28px 1fr;gap:6px;margin:.5em 0}
+.step{display:grid;grid-template-columns:28px minmax(0,1fr);gap:6px;margin:.5em 0}
 .step>i{font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:.25em}
 
 /* tables */
@@ -161,7 +161,7 @@ svg .lb.small{font-style:normal}
 .merr{color:var(--red);background:var(--red-soft)}
 
 @media (max-width:900px){
-  .layout{grid-template-columns:1fr}
+  .layout{grid-template-columns:minmax(0,1fr)}
   .side{position:fixed;left:0;top:51px;width:280px;background:var(--paper);z-index:30;transform:translateX(-100%);transition:transform .25s;box-shadow:4px 0 20px rgba(0,0,0,.15)}
   .side.open{transform:none}
   .navbtn{display:block}
@@ -197,6 +197,9 @@ svg .lb.small{font-style:normal}
 .lab .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:700px){.lab .two{grid-template-columns:1fr}}
 @media (max-width:600px){ .prog,#openAll{display:none} .topbar{gap:8px} .tools button{padding:3px 8px} }
+
+main>section,.box,.lab,details,.goal{min-width:0;max-width:100%}
+.katex-display{overflow-x:auto;overflow-y:hidden}
 </style>
 </head>
 <body>
