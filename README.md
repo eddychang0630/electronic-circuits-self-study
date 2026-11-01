@@ -6,6 +6,7 @@
 
 - [線上開啟 HTML](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/)
 - [下載列印 PDF](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/electronic-circuits-A4-landscape.pdf)
+- [修正後入門頁：Body 接法、Q 點與小訊號切線](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/fundamentals.html)
 - [補充圖：Q 點的正確切線與轉導](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/gm-tangent-corrected.svg)
 
 此版本依 2026/09/09–2026/10/28 的上課日期整理板書公式、推導與圖，合併重複內容，另收錄講義公式及電路圖。HTML 已內嵌圖片、公式排版程式與字型，可下載後離線使用。KaTeX 0.16.22 授權見 `formula-print/LICENSE-KaTeX.txt`。
