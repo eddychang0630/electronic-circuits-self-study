@@ -2,6 +2,13 @@
 
 線上閱讀：<https://eddychang0630.github.io/electronic-circuits-self-study/>
 
+課堂公式與圖解（A4 橫式，含每次上課目錄，共 61 頁）：
+
+- [線上開啟 HTML](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/)
+- [下載列印 PDF](https://eddychang0630.github.io/electronic-circuits-self-study/formula-print/electronic-circuits-A4-landscape.pdf)
+
+此版本依 2026/09/09–2026/10/28 的上課日期整理板書公式、推導與圖，合併重複內容，另收錄講義公式及電路圖。HTML 已內嵌圖片、公式排版程式與字型，可下載後離線使用。KaTeX 0.16.22 授權見 `formula-print/LICENSE-KaTeX.txt`。
+
 根據使用者提供的 21 頁影像型《電子電路分析講義.pdf》（投影片 1–82）整理的繁體中文自學網站。包含摘要、目錄、電荷／離子／電場／等電位先備課、原創剖面示意、標準電路符號、KaTeX 公式、可調 VGS／VDS／VSB 的 MOS 互動動畫、公式推導、解題流程、自編例題與講義頁碼對照。
 
 ## 閱讀與安裝
